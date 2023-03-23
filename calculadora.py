@@ -6,6 +6,7 @@ from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QTextEdit
 from variables import WINDOW_ICON_PATH
 from styles import setupTheme
+from buttons import Button, ButtonsGrid
 
 #line edit e text edit é pra qnd n for algo mais simples como o qlabel
 
@@ -26,12 +27,24 @@ if __name__ == '__main__':
     
     #Info
     info = Info('2.0 ^ 10.0 = 1024')
-    window.addToVLayout(info)
+    window.addWidgetToVLayout(info)
     
-     # Display
+    #Display
     display = Display()
-    window.addToVLayout(display)
-    #display.setPlaceholderText('Digite algo')
+    window.addWidgetToVLayout(display)
+
+    #Grid
+    buttonsGrid = ButtonsGrid()
+    window.VLayout.addLayout(buttonsGrid) #adiciona buttonsgrid no VLayout
+
+    
+
+    # Button
+    # buttonsGrid.addWidget(Button('0'), 0, 0)
+    # buttonsGrid.addWidget(Button('1'), 0, 1)
+    # buttonsGrid.addWidget(Button('2'), 0, 2)
+    # buttonsGrid.addWidget(Button('3'), 1, 1, 1 ,2)
+
 
     
     #Executa tudo
